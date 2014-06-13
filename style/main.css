@@ -1,6 +1,3 @@
-
-@rnd: `Math.random()*100+"px"`;
-
 body {
 	position:absolute;
 	padding: 0;
@@ -16,9 +13,6 @@ body {
 div#mainView {
 	height:100%;
 	opacity:1;
-	div#world { @import './world.less'; }
-	div#playerStats{ @import './playerStats.less'; }
-	div#stats { @import './stats.less'; }
 }
 
 #inGameStats {
@@ -31,15 +25,16 @@ div#mainView {
 	z-index: 99999;
 	border-bottom: 1px solid black;
 	background: rgba(0,0,0,0.3);
-	input { width: 45px; }
-	h1 {
+}
+#inGameStats input { width: 45px; }
+#inGameStats h1 {
 		padding: 0;
 		margin: 0;
 		display: inline-block;
 		float: right;
 		font-family: monospace;
-	}
-	div.barWrap {
+}
+#inGameStats div.barWrap {
 		border: 1px solid black;
 		display: inline-block;
 		width: 10%;
@@ -47,14 +42,16 @@ div#mainView {
 		top: 4px;
 		position: relative;
 		background: rgba(0,0,0,0.4);
-	}
-	.bar {
-		&#inGameNextLevel { background: rgba(90, 90, 255, 0.83); }
-		&#inGameLive { background: rgba(255, 90, 90, 0.83); }
+}
+
+#inGameStats .bar#inGameNextLevel { background: rgb(90, 180, 255); }
+#inGameStats .bar#inGameLive { background: rgb(255, 88, 66);width:100%; }
+#inGameStats .bar#inGameBulletReload { background: rgb(255, 255, 44);width:100%; }
+#inGameStats .bar {
 		height: 100%;
 		width: 0%;
 	}
-}
+
 
 #upgradePlayer {
 	display:none;
@@ -65,7 +62,8 @@ div#mainView {
 	padding: 1%;
 	width: 98%;
 	background: black;
-	#upgradeShadow{
+}
+#upgradePlayer#upgradeShadow{
 		width:100%;
 		height:100%;
 		background: rgba(0,0,0,0.5);
@@ -73,23 +71,4 @@ div#mainView {
 		z-index: -999;
 		top: 0;
 		left: 0;
-	}
-}
-
-
-// Entitys Water-Game
-.Herbivore {
-	background: rgba(0,0,0,0.5);
-  //border: 1px solid black;
-}
-
-.Carnivore {
-	background: rgba(255,0,0,0.5);
-  border: 1px solid black;
-}
-
-.Algea {
-	-webkit-transform-origin:50% 50%;
-	background: rgb(128,255,64);
-  border: 1px solid #0f0;
 }
