@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ⲘꭚꟘᴘᴀᴄᴇ</title>
+    <link rel="icon" href="favicon.ico" type="image/ico" >
+    
+    <style>
+        *{ box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: #222;
+            color: #222;
+            font-family: monospace;
+        }
+        img {
+            width: 100%;
+            image-rendering: pixelated;
+        }
+        @keyframes rotateY {
+            0%{ filter: invert(20%);}
+            100%{ filter: invert(80%);}
+        }
+        @keyframes rotateYNeg {
+            0%{ rotate: y 0deg; }
+            100%{ rotate: y 360deg; }
+        }
+        .rotateY {
+            animation-name: rotateY;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(64);
+            animation-direction: alternate;
+            animation-delay: 0s;
+            rotate: y 0deg;
+        }
+        .rotateYDelayed0 {
+            animation-name: rotateYNeg;
+            animation-duration: 2s;
+            animation-delay: 0.25s;
+            animation-iteration-count: 1;
+        }
+        .rotateYDelayed1 {
+            animation-name: rotateYNeg;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: 1;
+        }
+        .whiteSvg{
+            filter: invert(50%);
+        }
+
+        #rootContainer {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .responiveRow {
+            width: 400px;
+            margin: 0 auto;
+            background: #aaa;
+
+            border-left: 5px solid black;
+            border-right: 5px solid black;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .responiveRow>* {
+            padding: 12px;
+            padding-top: 12px;
+        }
+
+        #headerImg {
+            background-image: url(img/slmr_doc_96pixel.png);
+            background-size: 758px;
+            background-position: 42% 93%;
+            background-repeat: no-repeat;
+            margin-top: -50%;
+            width: 100%;
+            height: 220px;
+            border-bottom: 5px solid black;
+            image-rendering: pixelated;
+        }
+
+        #footer {
+            position: relative;
+            height: auto;
+            margin-top: auto;
+            align-self: flex-end;
+            margin-top: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="rootContainer">
+        <div class="responiveRow" >
+            <img class="rotateY rotateYDelayed0 whiteSvg" src="img/saylermorph_top.svg" alt="">
+            <img class="rotateY" src="img/saylermorph_center.svg" alt="">
+            <div id="headerImg" ></div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum totam at nisi sunt facere? Neque quaerat, commodi vero facere ipsum veniam aliquid aut ullam doloribus, ea saepe eum velit accusamus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum totam at nisi sunt facere? Neque quaerat, commodi vero facere ipsum veniam aliquid aut ullam doloribus, ea saepe eum velit accusamus.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum totam at nisi sunt facere? Neque quaerat, commodi vero facere ipsum veniam aliquid aut ullam doloribus, ea saepe eum velit accusamus.</p>
+            <div id="footer">
+                <img  class="rotateY rotateYDelayed1" src="img/saylermorph_bottom.svg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
